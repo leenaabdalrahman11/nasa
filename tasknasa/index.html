@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Pop-up to Enter User Name -->
+    <div id="namePopup" class="popup modern-popup">
+        <div class="popup-content">
+            <label for="username">Enter your name:</label>
+            <input type="text" id="username" required>
+            <button class="modern-button" onclick="submitName()">Submit</button>
+        </div>
+    </div>
+
+    <!-- Main Page Content -->
+    <div id="mainPage" class="hidden">
+        <div class="stars"></div>
+        <p id="userNameDisplay" class="username-display"></p>
+        
+        <!-- Counter for Correct Answers -->
+        <div id="correctCounter" class="counter-display">Correct Answers: 0</div>
+        
+        <!-- Counter for Wrong Answers (NEW) -->
+        <div id="wrongCounter" class="counter1-display">Wrong Answers: 0</div>
+
+        <!-- Planets Section -->
+        <div class="planets">
+            <!-- Planet 1: Unlocked by Default -->
+            <div class="planet" id="planet1" onclick="showTaskPopup(1)">
+                <img src="planet1.png" alt="Planet 1">
+                <p>Name Constellations</p>
+            </div>
+            <!-- Planet 2: Locked Initially -->
+            <div class="planet locked" id="planet2" onclick="showTaskPopup(2)">
+                <img src="planet2.png" alt="Planet 2">
+                <p>know the planet</p>
+            </div>
+            <!-- Planet 3: Locked Initially -->
+           <div class="planet locked" id="planet3" onclick="showTaskPopup(3)">
+                <img src="planet3.png" alt="Planet 3">
+                <p>present everywhere</p>
+                
+            </div>
+            <!-- Planet 4: Locked Initially -->
+            <div class="planet locked" id="planet4" onclick="showTaskPopup(4)">
+                <img src="planet4.png" alt="Planet 4">
+                <p>Difficult experience</p>
+            </div>
+        </div>
+
+        <img id="spaceship" src="imge.png" style="width: 40px;height: 70px;"  alt="Spaceship" class="spaceship">
+    </div>
+
+    <!-- Task Pop-up -->
+    <div id="taskPopup" class="popup modern-popup hidden">
+        <div class="popup-content">
+            <p id="taskQuestion">Complete the task:</p>
+            <input type="text" id="taskAnswer" required>
+            <button class="modern-button" onclick="submitTaskAnswer()">Submit</button>
+            <button class="modern-button secondary-button" onclick="closePopup()">Close</button>
+           <a  href="https://jovial-crumble-15633f.netlify.app/?fbclid=IwY2xjawFvLUNleHRuA2FlbQIxMAABHYkE0kaUYrpczDYS55GoKqJLpzUnmeYyHFP5t8jQ9pIvs1QIXXmfATp9fQ_aem_aHIxJbAqklz8FyKUu0fwLQ"><button class="modern-button unity-button" ">Go to Unity Page</button></a> 
+        </div>
+    </div>
+
+    <!-- Result Pop-up -->
+    <div id="resultPopup" class="popup modern-popup hidden">
+        <div class="popup-content">
+            <p class="result-text"></p>
+            <button class="modern-button" onclick="closePopup()">Close</button>
+        </div>
+    </div>
+</body>
+</html>

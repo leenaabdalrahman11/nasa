@@ -1,0 +1,202 @@
+/* Body Styling */
+body {
+    background-image: url("sky.jpg");
+    background-size:cover ;
+   
+      color: white;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+}
+.lolo{
+    background-color: #d4b66e;
+    color: black;
+    border-radius: 10px;
+    text-decoration: none;
+    width: 200px;
+    padding: 10px;
+}
+.aa{
+    background-color: #d4b66e;
+    border-radius: 10px;
+    color: #000;
+    animation: pulse 2s infinite; /* يستمر النبض بشكل دائم */
+    transition: transform 0.2s ease-in-out;
+}
+/* Stars Background Animation 
+.stars {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-image: url('sky.jpg');
+    background-repeat: no-repeat;
+
+    animation: moveStars 10s linear infinite;
+    z-index: -1;
+    opacity: 0.5;
+}
+.stars {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-image: url('sky.jpg');
+    background-repeat: no-repeat;
+
+    animation: moveStars 10s linear infinite;
+    z-index: -1;
+    opacity: 0.5;
+}*/
+@keyframes moveStars {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(100%);
+    }
+}
+
+/* Pop-up Window Styling */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.9);
+    color: black;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.25);
+    z-index: 9999;
+    width: 350px;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.popup-content {
+    text-align: center;
+}
+
+/* Modern Styling for Input */
+input[type="text"] {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 80%;
+    margin-bottom: 15px;
+}
+
+/* Modern Buttons */
+.modern-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.modern-button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+.secondary-button {
+    background-color: #dc3545;
+}
+
+.secondary-button:hover {
+    background-color: #c82333;
+}
+
+/* Username Display */
+.username-display {
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
+
+/* Counter Display Styling */
+.counter-display {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.25);
+}
+.counter1-display {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.25);
+}
+
+
+/* Planets Section */
+.planets {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.planet {
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.planet img {
+    width: 150px;  /* Set the desired width */
+    height: 150px; /* Set the same height for a perfect circle */
+    border-radius: 50%; /* This makes the shape circular */
+    object-fit: cover; /* Ensures the image fits within the circle without distortion */
+    box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.25);
+    transition: transform 0.3s;
+}
+
+.planet:hover img {
+    animation: rotatePlanet 1.5s linear infinite;
+    transform: scale(1.2);
+}
+/* Lock Icon Styling */
+.lock-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    display: block;
+    z-index: 10;
+}
+
+/* Locked Planets */
+.planet.locked {
+    pointer-events: none;
+    opacity: 0.5;
+}
+/* Continuous Rotation Animation */
+@keyframes rotatePlanet {
+    0% {
+        transform: rotate(0deg) scale(1.2);
+    }
+    100% {
+        transform: rotate(360deg) scale(1.2);
+    }
+}
