@@ -13,7 +13,7 @@
 <body>
     <div id="sky" class="sky"></div>
     <header id="hhome">
-        <nav class="navbar">
+        <nav class="navbar" id="navbar">
           
             <div class="logo">
                 <img src="logo.jpeg"/>
@@ -296,6 +296,18 @@
                 a.click();
                 document.body.removeChild(a);
             });
+        </script>
+        <script>
+            const navbar = document.getElementById('navbar');
+
+// إضافة أو إزالة الفئة 'scrolled' عند التمرير
+window.onscroll = function() {
+    if (window.scrollY > 50) { // 50 بيكسل هي المسافة التي عندها يتغير اللون
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+};
         </script>
         
     
