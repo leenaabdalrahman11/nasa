@@ -9,6 +9,8 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -120,7 +122,7 @@
             <small>Welcome to</small>
             <h1>Nasa Navigators</h1>
             <a
-              href="https://exoplanetdemo.netlify.app/?fbclid=IwY2xjawFv-kZleHRuA2FlbQIxMAABHW5GSfYJAr53O0xI6v5hPigaQVv_i97Cy7RThuWmuFB67V9IdH82IbthLQ_aem_RoB9GY4StVLMbFjSWhvdDA"
+              href="https://earnest-stardust-8bd58f.netlify.app/?fbclid=IwY2xjawGUlOFleHRuA2FlbQIxMAABHdJ4TTxbSIwTMkpeCZax-B2Sb7lSPnJRAFqdnbxwEm8S3ZVEgFuvnjV_6Q_aem_99yZqS6w3ZyljQ4Gp92oNA"
             >
               <button>Go To The APP</button>
             </a>
@@ -245,6 +247,67 @@
         </div>
       </div>
     </section>
+<section id="contact-us" class="container my-5">
+    <h2 class="text-center mb-4">إرسال تقرير أو تعليق</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form id="reportForm" class="p-4 border rounded bg-light">
+                <div class="mb-3">
+                    <label for="name" class="form-label">الاسم:</label>
+                    <input type="text" class="form-control" id="name" placeholder="أدخل اسمك" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">البريد الإلكتروني:</label>
+                    <input type="email" class="form-control" id="email" placeholder="example@domain.com" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">التقرير أو التعليق:</label>
+                    <textarea class="form-control" id="message" rows="4" placeholder="اكتب رسالتك هنا" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">إرسال</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<script src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js"></script>
+<script>
+    // Initialize EmailJS with your Public Key
+    emailjs.init("C6Y8miTLuBOqoFkKa");
+
+    document.getElementById("reportForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    // تأكيد الدخول في عملية الإرسال
+    alert("تم الضغط على إرسال النموذج");
+
+    // جمع القيم المدخلة من المستخدم
+    const userName = document.getElementById("name").value;
+    const userEmail = document.getElementById("email").value;
+    const userMessage = document.getElementById("message").value;
+
+    console.log("تفاصيل النموذج:", userName, userEmail, userMessage); // لعرض البيانات في Console
+
+    // إرسال البيانات باستخدام EmailJS
+    emailjs.send("service_f5u8rt3", "template_i1lkp1r", {
+        from_name: userName,
+        from_email: userEmail,
+        message: userMessage
+    }).then(function(response) {
+        alert("تم إرسال الرسالة بنجاح!");
+        document.getElementById("reportForm").reset(); // Reset the form after sending
+    }, function(error) {
+        console.error("Error: ", error); // عرض تفاصيل الخطأ في Console
+        alert("حدث خطأ، حاول مرة أخرى. " + (error.text || "يرجى مراجعة الإعدادات."));
+    });
+});
+
+</script>
+
+    
+    
+    
+    
 
     <footer id="footer">
       <div class="MainFooter">
@@ -345,12 +408,15 @@
           headerBody.style.opacity = "1"; // إعادة إظهار العنصر
         });
     </script>
+        <!-- Bootstrap JavaScript and Popper.js -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
     <script>
       document
         .getElementById("downloadBtn")
         .addEventListener("click", function () {
           const fileUrl =
-            "https://github.com/leenaabdalrahman11/nasa/raw/main/finalPart/final.zip"; // استخدم الرابط المباشر
+            "https://github.com/leenaabdalrahman11/nasa/raw/main/NasaNavigators/NasaNavigators.zip"; // استخدم الرابط المباشر
 
           const a = document.createElement("a");
           a.href = fileUrl;
